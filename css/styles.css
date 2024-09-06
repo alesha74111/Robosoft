@@ -216,6 +216,10 @@ img {
   }
 }
 @media (max-width: 480px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .header__title--mobile {
     font-size: 28px;
   }
