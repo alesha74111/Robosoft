@@ -1,0 +1,225 @@
+@font-face {
+  font-weight: 400; /* Соответствует значению normal */
+  font-family: "Abel";
+  src: url("/fonts/abel.ttf") format("ttf");
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+:root {
+  /* основной цвет текста*/
+  --primary-color: #212121;
+  /* дополнительный цвет текста*/
+  --secondary-color: #000000;
+  --primary-white-color: #ffffff;
+  /*цвет акцентного линии*/
+  --line-blue: #2066a2;
+  --line-gray: #a7a7a7;
+
+  --font-family: "Abel", sans-serif;
+  --regular-font: 400;
+  --primary-font-size: 14px;
+  --secondary-font-size: 24px;
+}
+body {
+  background-color: var(--primary-white-color);
+  color: var(--primary-color); 
+  font-family: var(--font-family); 
+  font-size: var(--primary-font-size); 
+  font-weight: var(--regular-font); 
+  font-style: normal;
+  line-height: 1.5;
+}
+h1,
+h2,
+h4 {
+  font-weight: var(--regular-font);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.container {
+  max-width: 1440px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  padding-top: 9px;
+  padding-bottom: 11px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.header__title {
+  width: 332px;
+  margin: 0;
+  font-size: 32px;
+  text-align: center;
+}
+.header__title--mobile {
+  display: none;
+}
+.header__logout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.logout__link {
+  width: 112px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.logout__link-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+  fill: currentColor;
+}
+.structures__container {
+  max-width: 1440px;
+  padding: 20px 35px 30px;
+  margin: 0 auto;
+  border-top: 2px solid var(--line-blue);
+  border-bottom: 2px solid var(--line-gray);
+}
+.structures__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 15px;
+}
+.structures__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+.structures__item {
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 24px;
+}
+.structures__items--col-2 > .structures__item {
+  gap: 10px;
+}
+.structures__title {
+  margin-bottom: 4px;
+  font-size: var(--secondary-font-size);
+  text-align: center;
+}
+.structures__title--col-4 {
+  margin-bottom: 14px;
+}
+.structures__text {
+  padding: 8px 15px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 24px;
+  transition: 0.3s;
+}
+.structures__text--icon {
+  position: relative;
+  padding: 8px 15px 8px 39px;
+}
+.structures__text:hover,
+.logout__link:hover {
+  background-color: #bedfdf;
+  border-color: transparent;
+}
+.structures__text--icon::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 17px;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  background-image: url(/images/icon_earth.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 17px;
+}
+.footer {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.footer__copyright {
+  padding-top: 8px;
+  padding-bottom: 9px;
+}
+.footer__inner {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+@media (max-width: 1280px) {
+  .structures__title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .structures__inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .header__title {
+    display: none;
+  }
+  .header__title--mobile {
+    display: block;
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .structures__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .header__logout {
+    max-width: 120px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .header__title--mobile {
+    font-size: 28px;
+  }
+  .structures__title {
+    font-size: 18px;
+  }
+}
