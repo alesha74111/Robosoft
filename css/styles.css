@@ -31,10 +31,10 @@ html {
 }
 body {
   background-color: var(--primary-white-color);
-  color: var(--primary-color); 
-  font-family: var(--font-family); 
-  font-size: var(--primary-font-size); 
-  font-weight: var(--regular-font); 
+  color: var(--primary-color);
+  font-family: var(--font-family);
+  font-size: var(--primary-font-size);
+  font-weight: var(--regular-font);
   font-style: normal;
   line-height: 1.5;
 }
@@ -166,7 +166,7 @@ img {
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  background-image: url(/images/icon_earth.png);
+  background-image: url(../images/icon_earth.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 17px;
